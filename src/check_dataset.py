@@ -20,3 +20,9 @@ print(round(y.mean() * 100, 2), "%")
 
 print("\nTotal missing values:")
 print(X.isna().sum().sum() + y.isna().sum())
+
+print("\nDuplicate rows:", X.duplicated().sum())
+
+for col in ["X2", "X3", "X4"]:
+    print(f"\nValues of {col}:")
+    print(X[col].value_counts().sort_index())
